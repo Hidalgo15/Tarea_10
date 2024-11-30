@@ -1,0 +1,153 @@
+﻿@page "/"
+@inject IJSRuntime JSx
+@using System.Text.Json;
+@rendermode InteractiveServer
+@using Microsoft.EntityFrameworkCore;
+
+
+<table border="3" >
+    <tr>
+        <td><input type="text" id="input-0" @bind="ColorInput[0]" style="background-color:@Fondo(ColorInput[0]); width: 150px;" placeholder="Input 0" /></td>
+        <td><input type="text" id="input-1" @bind="ColorInput[1]" style="background-color:@Fondo(ColorInput[1]); width: 150px;" placeholder="Input 1" /></td>
+        <td><input type="text" id="input-2" @bind="ColorInput[2]" style="background-color:@Fondo(ColorInput[2]); width: 150px;" placeholder="Input 2" /></td>
+        <td><input type="text" id="input-3" @bind="ColorInput[3]" style="background-color:@Fondo(ColorInput[3]); width: 150px;" placeholder="Input 3" /></td>
+        <td><input type="text" id="input-4" @bind="ColorInput[4]" style="background-color:@Fondo(ColorInput[4]); width: 150px;" placeholder="Input 4" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-5" @bind="ColorInput[5]" style="background-color:@Fondo(ColorInput[5]); width: 150px;" placeholder="Input 5" /></td>
+        <td><input type="text" id="input-6" @bind="ColorInput[6]" style="background-color:@Fondo(ColorInput[6]); width: 150px;" placeholder="Input 6" /></td>
+        <td><input type="text" id="input-7" @bind="ColorInput[7]" style="background-color:@Fondo(ColorInput[7]); width: 150px;" placeholder="Input 7" /></td>
+        <td><input type="text" id="input-8" @bind="ColorInput[8]" style="background-color:@Fondo(ColorInput[8]); width: 150px;" placeholder="Input 8" /></td>
+        <td><input type="text" id="input-9" @bind="ColorInput[9]" style="background-color:@Fondo(ColorInput[9]); width: 150px;" placeholder="Input 9" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-10" @bind="ColorInput[10]" style="background-color:@Fondo(ColorInput[10]); width: 150px;" placeholder="Input 10" /></td>
+        <td><input type="text" id="input-11" @bind="ColorInput[11]" style="background-color:@Fondo(ColorInput[11]); width: 150px;" placeholder="Input 11" /></td>
+        <td><input type="text" id="input-12" @bind="ColorInput[12]" style="background-color:@Fondo(ColorInput[12]); width: 150px;" placeholder="Input 12" /></td>
+        <td><input type="text" id="input-13" @bind="ColorInput[13]" style="background-color:@Fondo(ColorInput[13]); width: 150px;" placeholder="Input 13" /></td>
+        <td><input type="text" id="input-14" @bind="ColorInput[14]" style="background-color:@Fondo(ColorInput[14]); width: 150px;" placeholder="Input 14" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-15" @bind="ColorInput[15]" style="background-color:@Fondo(ColorInput[15]); width: 150px;" placeholder="Input 15" /></td>
+        <td><input type="text" id="input-16" @bind="ColorInput[16]" style="background-color:@Fondo(ColorInput[16]); width: 150px;" placeholder="Input 16" /></td>
+        <td><input type="text" id="input-17" @bind="ColorInput[17]" style="background-color:@Fondo(ColorInput[17]); width: 150px;" placeholder="Input 17" /></td>
+        <td><input type="text" id="input-18" @bind="ColorInput[18]" style="background-color:@Fondo(ColorInput[18]); width: 150px;" placeholder="Input 18" /></td>
+        <td><input type="text" id="input-19" @bind="ColorInput[19]" style="background-color:@Fondo(ColorInput[19]); width: 150px;" placeholder="Input 19" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-20" @bind="ColorInput[20]" style="background-color:@Fondo(ColorInput[20]); width: 150px;" placeholder="Input 20" /></td>
+        <td><input type="text" id="input-21" @bind="ColorInput[21]" style="background-color:@Fondo(ColorInput[21]); width: 150px;" placeholder="Input 21" /></td>
+        <td><input type="text" id="input-22" @bind="ColorInput[22]" style="background-color:@Fondo(ColorInput[22]); width: 150px;" placeholder="Input 22" /></td>
+        <td><input type="text" id="input-23" @bind="ColorInput[23]" style="background-color:@Fondo(ColorInput[23]); width: 150px;" placeholder="Input 23" /></td>
+        <td><input type="text" id="input-24" @bind="ColorInput[24]" style="background-color:@Fondo(ColorInput[24]); width: 150px;" placeholder="Input 24" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-20" @bind="ColorInput[25]" style="background-color:@Fondo(ColorInput[25]); width: 150px;" placeholder="Input 25" /></td>
+        <td><input type="text" id="input-21" @bind="ColorInput[26]" style="background-color:@Fondo(ColorInput[26]); width: 150px;" placeholder="Input 26" /></td>
+        <td><input type="text" id="input-22" @bind="ColorInput[27]" style="background-color:@Fondo(ColorInput[27]); width: 150px;" placeholder="Input 27" /></td>
+        <td><input type="text" id="input-23" @bind="ColorInput[28]" style="background-color:@Fondo(ColorInput[28]); width: 150px;" placeholder="Input 28" /></td>
+        <td><input type="text" id="input-24" @bind="ColorInput[29]" style="background-color:@Fondo(ColorInput[29]); width: 150px;" placeholder="Input 29" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-20" @bind="ColorInput[30]" style="background-color:@Fondo(ColorInput[30]); width: 150px;" placeholder="Input 30" /></td>
+        <td><input type="text" id="input-21" @bind="ColorInput[31]" style="background-color:@Fondo(ColorInput[31]); width: 150px;" placeholder="Input 31" /></td>
+        <td><input type="text" id="input-22" @bind="ColorInput[32]" style="background-color:@Fondo(ColorInput[32]); width: 150px;" placeholder="Input 32" /></td>
+        <td><input type="text" id="input-23" @bind="ColorInput[33]" style="background-color:@Fondo(ColorInput[33]); width: 150px;" placeholder="Input 33" /></td>
+        <td><input type="text" id="input-24" @bind="ColorInput[34]" style="background-color:@Fondo(ColorInput[34]); width: 150px;" placeholder="Input 34" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-20" @bind="ColorInput[35]" style="background-color:@Fondo(ColorInput[35]); width: 150px;" placeholder="Input 35" /></td>
+        <td><input type="text" id="input-21" @bind="ColorInput[36]" style="background-color:@Fondo(ColorInput[36]); width: 150px;" placeholder="Input 36" /></td>
+        <td><input type="text" id="input-22" @bind="ColorInput[37]" style="background-color:@Fondo(ColorInput[37]); width: 150px;" placeholder="Input 37" /></td>
+        <td><input type="text" id="input-23" @bind="ColorInput[38]" style="background-color:@Fondo(ColorInput[38]); width: 150px;" placeholder="Input 38" /></td>
+        <td><input type="text" id="input-24" @bind="ColorInput[39]" style="background-color:@Fondo(ColorInput[39]); width: 150px;" placeholder="Input 39" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-20" @bind="ColorInput[40]" style="background-color:@Fondo(ColorInput[40]); width: 150px;" placeholder="Input 40" /></td>
+        <td><input type="text" id="input-21" @bind="ColorInput[41]" style="background-color:@Fondo(ColorInput[41]); width: 150px;" placeholder="Input 41" /></td>
+        <td><input type="text" id="input-22" @bind="ColorInput[42]" style="background-color:@Fondo(ColorInput[42]); width: 150px;" placeholder="Input 42" /></td>
+        <td><input type="text" id="input-23" @bind="ColorInput[43]" style="background-color:@Fondo(ColorInput[43]); width: 150px;" placeholder="Input 43" /></td>
+        <td><input type="text" id="input-24" @bind="ColorInput[44]" style="background-color:@Fondo(ColorInput[44]); width: 150px;" placeholder="Input 44" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="input-20" @bind="ColorInput[45]" style="background-color:@Fondo(ColorInput[45]); width: 150px;" placeholder="Input 45" /></td>
+        <td><input type="text" id="input-21" @bind="ColorInput[46]" style="background-color:@Fondo(ColorInput[46]); width: 150px;" placeholder="Input 46" /></td>
+        <td><input type="text" id="input-22" @bind="ColorInput[47]" style="background-color:@Fondo(ColorInput[47]); width: 150px;" placeholder="Input 47" /></td>
+        <td><input type="text" id="input-23" @bind="ColorInput[48]" style="background-color:@Fondo(ColorInput[48]); width: 150px;" placeholder="Input 48" /></td>
+        <td><input type="text" id="input-24" @bind="ColorInput[49]" style="background-color:@Fondo(ColorInput[49]); width: 150px;" placeholder="Input 49" /></td>
+    </tr>
+</table>
+
+<br>
+
+<table border="2" style="margin-top: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); border-collapse: collapse;">
+    <tr>
+        <td style="padding: 10px;">
+            <p><strong>Cantidad de casillas rojas: @Rojo </strong></p>
+            <p><strong>Cantidad de casillas azules: @Azul </strong></p>
+            <p><strong>Cantidad de casillas verdes: @Verde </strong></p>
+            <p><strong>Cantidad de casillas Amarillas: @Amarillo </strong></p>
+            <p><strong>Cantidad de casillas Moradas: @Morado </strong></p>
+            <p><strong>Cantidad de casillas Grises: @Gris </strong></p>
+        </td>
+    </tr>
+</table>
+<br>
+
+<button class="btn btn-success" border ="5" @onclick="GuardarColor">Guadar</button>
+<button class="btn btn-danger" border ="5" @onclick="Limpiar">Limpiar tabla</button>
+
+@code {
+    private List<string> ColorInput = new List<string>(new string[50]);
+
+    private string Fondo(string inputColor)
+    {
+        if (string.IsNullOrEmpty(inputColor))
+        {
+            return "white";
+        }
+
+        return inputColor.ToLower() switch
+        {
+            "rojo" => "red",
+            "verde" => "green",
+            "azul" => "blue",
+            "amarillo" => "yellow",
+            "gris" => "gray",
+            "morado" =>"purple",
+            _ => "white" 
+        };
+    }
+
+    private async Task GuardarColor(){
+        var GColor = System.Text.Json.JsonSerializer.Serialize(ColorInput);
+        await JSx.InvokeVoidAsync("localStorage.setItem" ,"Datos", GColor);
+        await JSx.InvokeVoidAsync("alert", "Se guardaron los colores");
+    } 
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(firstRender){
+            var color = await JSx.InvokeAsync<string>("localStorage.getItem" ,"Datos");
+               if(!string.IsNullOrEmpty(color)){
+                ColorInput = System.Text.Json.JsonSerializer.Deserialize<List<string>>(color);
+                    StateHasChanged();
+               } 
+        }
+    }
+
+    private async Task Limpiar(){
+        await JSx.InvokeVoidAsync("localStorage.removeItem" ,"Datos");
+        await JSx.InvokeVoidAsync("alert", "Se borraron los colores");
+        ColorInput = new List<string>(new string [50]);
+        StateHasChanged();
+    }
+
+
+    private int Rojo => ColorInput.Count(c => c?.ToLower()=="rojo");
+    private int Azul => ColorInput.Count(c => c?.ToLower()=="azul");
+    private int Verde => ColorInput.Count(c => c?.ToLower()=="verde");
+    private int Amarillo => ColorInput.Count(c => c?.ToLower()=="amarillo");
+    private int Morado => ColorInput.Count(c => c?.ToLower()=="morado");
+    private int Gris => ColorInput.Count(c => c?.ToLower()=="gris");
+}
